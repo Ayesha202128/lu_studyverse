@@ -1,14 +1,19 @@
 <?php
+
 $host = "localhost";
 $user = "root";
-$pass = "";
-$dbname = "lu_studyverse";
+$password = "";
+$database = "lu_studyverse";
 
-// Database-er sathe connection toiri
-$conn = mysqli_connect($host, $user, $pass, $dbname);
+$conn = mysqli_connect(
+    $host,
+    $user,
+    $password,
+    $database
+);
 
-// Connection check kora
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if(!$conn){
+    die("Database Connection Failed");
 }
+
 ?>
