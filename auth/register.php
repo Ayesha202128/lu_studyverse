@@ -1,50 +1,9 @@
 <?php
+session_start();
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-include __DIR__ . '/../config/db.php';
-
-if(isset($_POST['register'])){
-
-    $fullname = trim($_POST['fullname']);
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-    $confirm_password = trim($_POST['confirm_password']);
-
-    if(empty($fullname) || empty($email) || empty($password)){
-        die("All fields are required.");
-    }
-
-    if($password !== $confirm_password){
-        die("Passwords do not match.");
-    }
-
-    // check email
-    $checkEmail = "SELECT * FROM users WHERE email='$email'";
-    $result = mysqli_query($conn, $checkEmail);
-
-    if(mysqli_num_rows($result) > 0){
-        die("Email already registered.");
-    }
-
-    // hash password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    $verification_code = md5(rand());
-
-    $sql = "INSERT INTO users (fullname, email, password, verification_code)
-            VALUES ('$fullname', '$email', '$hashed_password', '$verification_code')";
-
-    if(mysqli_query($conn, $sql)){
-        echo "Registration Successful";
-    }
-    else{
-        die("Insert Failed: " . mysqli_error($conn));
-    }
-}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +20,6 @@ if(isset($_POST['register'])){
 
     <link rel="stylesheet"
     href="/lu_studyverse/assets/css/auth.css">
-
 </head>
 
 <body>
@@ -94,59 +52,84 @@ if(isset($_POST['register'])){
     <div class="right">
 
         <h2>Create Account</h2>
+
         <p>Join the community of scholars today.</p>
 
         <!-- TABS -->
         <div class="tabs">
-            <button class="active">Register</button>
-            <button onclick="window.location.href='login.php'">
+            <button class="active" type="button">
+                Register
+            </button>
+
+            <button
+                type="button"
+                onclick="window.location.href='login.php'">
                 Login
             </button>
         </div>
 
+        <!-- ERROR MESSAGE -->
+        <?php if(isset($_SESSION['error']) && $_SESSION['error'] != ""){ ?>
+
+            <div style="
+                background:#ffdddd;
+                color:#a30000;
+                padding:10px;
+                border-radius:8px;
+                margin-bottom:10px;
+                font-size:13px;
+            ">
+                <?php echo $_SESSION['error']; ?>
+            </div>
+
+        <?php } ?>
+
+        <!-- SUCCESS MESSAGE -->
+        <?php if(isset($_SESSION['success']) && $_SESSION['success'] != ""){ ?>
+
+            <div style="
+                background:#ddffdd;
+                color:#0a6b0a;
+                padding:10px;
+                border-radius:8px;
+                margin-bottom:10px;
+                font-size:13px;
+            ">
+                <?php echo $_SESSION['success']; ?>
+            </div>
+
+        <?php } ?>
+
+        <?php
+        unset($_SESSION['error']);
+        unset($_SESSION['success']);
+        ?>
+
         <!-- REGISTER FORM -->
-    <form action="register_action.php" method="POST">
+        <form action="register_action.php" method="POST">
+
             <!-- FULL NAME -->
             <label>Full Name</label>
-            <input type="text"
-            name="fullname"
-            placeholder="Enter your full name"
-            required>
+            <input type="text" name="fullname" placeholder="Enter your full name" required>
 
             <!-- EMAIL -->
             <label>Academic Email</label>
-            <input type="email"
-            name="email"
-            placeholder="name@university.edu"
-            required>
+            <input type="email" name="email" placeholder="name@university.edu" required>
 
             <!-- PASSWORD -->
             <label>Password</label>
-            <input type="password"
-            name="password"
-            placeholder="••••••••"
-            required>
+            <input type="password" name="password" placeholder="••••••••" required>
 
             <!-- CONFIRM PASSWORD -->
             <label>Confirm Password</label>
-            <input type="password"
-            name="confirm_password"
-            placeholder="••••••••"
-            required>
-
+            <input type="password" name="confirm_password" placeholder="••••••••" required>
 
             <!-- BUTTON -->
-          <button
-type="submit"
-name="register"
-class="btn">
+            <button type="submit" name="register" class="btn">
+                Create Account
+            </button>
 
-Create Account
-
-</button>
         </form>
-
-     
 
     </div>
 

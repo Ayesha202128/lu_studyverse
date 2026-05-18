@@ -1,0 +1,863 @@
+/* ==========================================
+   LU STUDYVERSE: EKDOM SHOHOJ DESIGN SYSTEM
+   ========================================== */
+
+/* Puro page er font ebong background color */
+body {
+    background-color: #F4F7FA;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- HEADER / NAVBAR DESIGN --- */
+.header {
+    background-color: #ffffff;
+    /* Shada background */
+    border-bottom: 1px solid #e2e8f0;
+    /* Nicher choto boder line */
+    padding: 15px 0;
+    /* Upor-niche jaiga khali kora */
+}
+
+/* Logo er styling (LU StudyVerse text) */
+.logo {
+    color: #0A2540;
+    /* Figma navy blue color */
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    /* Nicher underline bad */
+}
+
+/* Menu links (Browse, Dashboard, Upload) */
+.menu-link {
+    color: #627D98;
+    /* Muted gray color */
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 15px;
+    /* Pashe pashe jaiga khali kora */
+}
+
+/* Menu link e mouse nilw jeno navy blue color hoy */
+.menu-link:hover {
+    color: #0A2540;
+}
+
+/* Active page link (Browse jemon active thakbe) */
+.menu-link.active {
+    color: #0A2540;
+    font-weight: bold;
+    border-bottom: 2px solid #0A2540;
+    /* Nicher dark border line */
+    padding-bottom: 5px;
+}
+
+/* Sign In text link */
+.signin-btn {
+    color: #0A2540;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+/* Get Started Blue Button */
+.getstarted-btn {
+    background-color: #0066cc;
+    /* Figma blue color */
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    /* Kona gulo round kora */
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* ==========================================================
+   HEADER USER PROFILE ACTION SECTION
+   ========================================================== */
+.profile-trigger {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 50px;
+
+}
+
+.profile-trigger:hover {
+    background-color: #F4F7FA;
+    /* মাউস নিলে হালকা ব্যাকগ্রাউন্ড শেড */
+}
+
+/* গোল প্রোফাইল ছবির কন্টেইনার এবং প্রিসাইজ সাইজিং */
+.avatar-wrapper {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #0066cc;
+    /* আপনার সিগনেচার ব্লু বর্ডার */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.header-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ছবি যাতে লম্বা বা নষ্ট না হয়ে গোল ফিট হয় */
+}
+
+/* ইউজারের টেক্সট বক্স এবং টাইপোগ্রাফি */
+.user-meta-box {
+    display: flex;
+    align-items: center;
+}
+
+.user-greeting {
+    color: #0A2540;
+    /* নেভি ব্লু থিম কালার */
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ড্রপডাউন বক্সের কাস্টম মডার্ন ডিজাইন */
+.custom-dropdown {
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 6px 0;
+}
+
+.custom-dropdown .dropdown-item {
+    font-size: 14px;
+    color: #627D98;
+    transition: all 0.2s ease;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: #F4F7FA;
+    color: #0066cc;
+    /* মাউস নিলে ব্লু হাইলাইট */
+}
+
+/* ==========================================================
+   NEW FLEXBOX HEADER & VERTICAL PROFILE ENGINE
+   ========================================================== */
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.header-logo-area {
+    flex: 1;
+}
+
+.header-menu-area {
+    flex: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header-user-area {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* প্রোফাইল ট্রিগার কন্টেইনার (ভার্টিকাল লেআউট) */
+.profile-card-trigger {
+    display: flex;
+    flex-direction: column;
+    /* ছবি উপরে, নাম নিচে নিয়ে আসবে */
+    align-items: center;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 8px;
+    transition: background 0.2s ease-in-out;
+}
+
+.profile-card-trigger:hover {
+    background-color: #F4F7FA;
+}
+
+/* পারফেক্ট রাউন্ড প্রোফাইল ফ্রেম */
+.avatar-circle-frame {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-bottom: 4px;
+    /* নামের থেকে একটু দূরত্ব বজায় রাখবে */
+}
+
+.avatar-circle-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* নিচের নামের টেক্সট স্টাইল */
+.user-name-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.user-name-label span {
+    color: #0A2540;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.user-name-label i {
+    font-size: 10px;
+    color: #627D98;
+}
+
+/* ড্রপডাউন বক্স ডিজাইন */
+.custom-header-dropdown {
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    margin-top: 8px;
+    ;
+    min-width: 150px;
+    ;
+}
+
+.custom-header-dropdown .dropdown-item {
+    font-size: 14px;
+    color: #4A5568;
+}
+
+.custom-header-dropdown .dropdown-item:hover {
+    background-color: #F4F7FA;
+    color: #0066cc;
+}
+
+/* --- FOOTER DESIGN --- */
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 40px 0;
+    margin-top: 50px;
+    /* Content theke niche rakhar jonno */
+}
+
+/* Footer er boro titles (Platform, Legal) */
+.footer-title {
+    color: #0A2540;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Footer er vitorer link (Terms, Privacy) */
+.footer-link {
+    color: #627D98;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Footer link e mouse nile jeno dark hoy */
+.footer-link:hover {
+    color: #0A2540;
+}
+
+/* --- HERO SECTION BANNER DESIGN --- */
+
+/* Hero Banner-er boro container zone */
+.hero-container {
+    padding: 60px 0;
+    background-color: #F4F7FA;
+    /* Figma light background color */
+}
+
+/* Redefined bamer choto badge design */
+.hero-badge {
+    background-color: rgba(0, 102, 204, 0.1);
+    /* Halka blue background opacity */
+    color: #0066cc;
+    /* Pure blue text */
+    padding: 6px 16px;
+    border-radius: 50px;
+    /* Puratun round tracking capsule capsule */
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Boro title text matching rule */
+.hero-title {
+    color: #0A2540;
+    /* Figma navy blue color */
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Title-er nicher short details paragraph description text */
+.hero-desc {
+    color: #627D98;
+    /* Slate gray standard tracking look text */
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Search bar er box container line wrapper wrapper */
+.search-wrapper {
+    background-color: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    max-width: 480px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Search box layer form input field styling code rules */
+.search-input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    color: #0A2540;
+}
+
+/* Search input focused rule placeholder styling rule text color overrides */
+.search-input::placeholder {
+    color: #A0AEC0;
+}
+
+/* Search blue button design rule matching setup code */
+.search-btn {
+    background-color: #0066cc;
+    /* Figma layout dynamic highlight blue */
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.hero-image-box {
+    position: relative;
+    width: 100%;
+}
+
+/* Direct PHP theke asha chobi-tar exact size set kora (Figma onujayi Same to Same) */
+.hero-main-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    /* Chobi ta jeno kete na jay ba lamba na hoye jay */
+    border-radius: 12px;
+    /* Kona gulo shundor round hobe */
+}
+
+/* Workspaces bottom image dynamic float micro card layout frame code specifications tracking standard lookup elements */
+.hero-float-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 8px;
+    max-width: 280px;
+    border-left: 4px solid #0066cc;
+    /* Bamer explicit blue thick target bar code element rule framework mapping anchor line */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Float mini card dynamic labels details typography properties */
+.float-tag {
+    color: #0A2540;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.float-title {
+    color: #4A5568;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* --- BROWSE BY CATEGORY DESIGN AREA --- */
+
+.category-section {
+    padding: 40px 0;
+    background-color: #F4F7FA;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.category-section-title {
+    color: #0A2540;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.category-view-all {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 4-Column Layout */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Gray Card Styling matching the background color from your picture */
+.category-card {
+    background-color: #EBF1F6;
+    /* Exact light blue-gray background tint */
+    border-radius: 8px;
+    padding: 35px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+/* Icon Sizing and Coloring */
+.category-icon-box {
+    color: #0066cc;
+    /* Solid accent blue color for icons */
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+/* Card Bottom Label Style */
+.category-card-title {
+    color: #0A2540;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}
+
+/* Responsive adjustment for small phones */
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* --- BROWSE BY CATEGORY DESIGN AREA --- */
+
+.category-section {
+    padding: 40px 0;
+    background-color: #F4F7FA;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.category-section-title {
+    color: #0A2540;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.category-view-all {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 4-Column Layout Grid mapping rules */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Gray Card Styling matching the background color from your picture panel precisely */
+.category-card {
+    background-color: #EBF1F6;
+    /* Exact light blue-gray background tint */
+    border-radius: 8px;
+    padding: 35px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+/* Icon Sizing and Coloring settings matching your visual layouts */
+.category-icon-box {
+    color: #0066cc;
+    /* Solid accent blue color for icons */
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+/* Card Bottom Label Typography Styles */
+.category-card-title {
+    color: #0A2540;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}
+
+/* Responsive adjustment scaling down configurations cleanly on small screens */
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================================
+   TRENDING MATERIALS DESIGN LAYOUT MODULE
+   ========================================================== */
+.trending-section {
+    padding: 60px 0;
+    background-color: #F4F7FA;
+}
+
+.trending-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.trending-title {
+    color: #0A2540;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.filter-btn {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: #4A5568;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Structural Split Grid: Large Card Left (2 Columns), Small Grid Right (2 Columns) */
+.trending-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 24px;
+}
+
+/* Left Featured Block Elements Styling Parameters */
+.card-featured {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.feat-badge {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: #EBF1F6;
+    color: #0066cc;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.feat-rating {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: #FFB100;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.feat-img-box {
+    background: #2D4A66;
+    /* Dark presentation panel tint color */
+    border-radius: 8px;
+    height: 180px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-doc-view i {
+    color: #ffffff;
+    font-size: 48px;
+    opacity: 0.8;
+}
+
+.feat-title-text {
+    color: #0A2540;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+}
+
+.feat-desc-text {
+    color: #627D98;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+}
+
+.feat-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #F0F4F8;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar-circle {
+    width: 32px;
+    height: 32px;
+    background: #63B3ED;
+    color: #ffffff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.author-name {
+    color: #4A5568;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-download-action {
+    background: #0A2540;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Right Side Nested Multi-Grid Engine Mappings */
+.sub-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.material-mini-card {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.badge-type {
+    background: #EDF2F7;
+    color: #718096;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.btn-bookmark-save {
+    background: none;
+    border: none;
+    color: #A0AEC0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.mini-card-title {
+    color: #0A2540;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.mini-card-body {
+    color: #627D98;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+}
+
+.mini-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #F0F4F8;
+}
+
+.meta-info-text {
+    color: #A0AEC0;
+    font-size: 12px;
+}
+
+.download-icon-accent {
+    color: #0066cc;
+    cursor: pointer;
+}
+
+.pagination-row {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-load-more {
+    background: #ffffff;
+    border: 1px solid #0A2540;
+    color: #0A2540;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ==========================================================
+   CONTRIBUTE PLATFORM CTA COMPONENT LOOK CONFIGURATIONS
+   ========================================================== */
+.contribute-cta-section {
+    padding: 40px 0 80px 0;
+    background-color: #F4F7FA;
+}
+
+.cta-blue-banner {
+    background: #1A365D;
+    /* Dark solid brand indigo panel tint */
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.cta-main-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.cta-subtitle-desc {
+    color: #90CDF4;
+    /* Soft blue text override color */
+    max-width: 600px;
+    margin: 0 auto 32px auto;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.cta-buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.btn-cta-primary {
+    background: #0066cc;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-cta-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Responsive parameters for fluid layout collapsing on viewport resize adjustments */
+@media (max-width: 992px) {
+    .trending-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .sub-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

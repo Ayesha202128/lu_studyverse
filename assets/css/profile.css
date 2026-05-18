@@ -1,190 +1,390 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* ==========================================================
+   LU STUDYVERSE DESIGN SYSTEM SPECIFICATIONS
+   ========================================================== */
+:root {
+    --navy-blue: #0A2540;
+    --primary-blue: #0066cc;
+    --text-muted: #627D98;
+    --light-bg: #F8FAFC;
+    --sidebar-width: 260px;
 }
 
 body {
-    background: #f4f7fc;
+    background-color: var(--light-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #334155;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-/* Layout */
-.dashboard-container {
+/* ==========================================================
+   APP APP-LAYOUT ARCHITECTURE
+   ========================================================== */
+.app-layout {
     display: flex;
     min-height: 100vh;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 260px;
-    background: #0d1b3d;
-    color: white;
-    padding: 30px 20px;
+/* ১. সাইডবার স্টাইলিং (Sidebar Engine) */
+.app-sidebar {
+    width: var(--sidebar-width);
+    background-color: #ffffff;
+    border-right: 1px solid #E2E8F0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
 }
 
-.logo {
-    margin-bottom: 40px;
-}
-
-.logo h2 {
-    font-size: 24px;
-}
-
-.menu {
-    list-style: none;
-}
-
-.menu li {
-    margin-bottom: 15px;
-}
-
-.menu li a {
-    text-decoration: none;
-    color: #d5d9e2;
+.sidebar-brand {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 14px;
-    border-radius: 12px;
-    transition: .3s;
-}
-
-.menu li a:hover,
-.menu .active a {
-    background: #1c2d5c;
-    color: white;
-}
-
-/* Main Content */
-.main-content {
-    flex: 1;
-    padding: 50px;
-}
-
-/* Profile Card */
-.profile-card {
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, .08);
-}
-
-.profile-card h1 {
-    margin-bottom: 8px;
-}
-
-.profile-card p {
-    color: gray;
+    gap: 10px;
+    padding: 0 24px mb-4;
     margin-bottom: 30px;
 }
 
-/* Profile Image */
-.profile-photo-section {
-    text-align: center;
-    margin-bottom: 35px;
+.brand-icon {
+    font-size: 24px;
+    color: var(--primary-blue);
 }
 
-.profile-photo {
-    width: 120px;
-    height: 120px;
+.brand-text {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy-blue);
+}
+
+/* সাইডবার ইউজার প্রফেশনাল উইজেট */
+.sidebar-user-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #F8FAFC;
+    margin: 0 16px 24px 16px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.sidebar-avatar {
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #0b63f6;
 }
 
-.upload-btn {
-    display: inline-block;
-    margin-top: 15px;
-    background: #0b63f6;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 10px;
-    cursor: pointer;
+.sidebar-user-info h6 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy-blue);
 }
 
-/* Form */
-.profile-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.sidebar-user-info p {
+    margin: 0;
+    font-size: 11px;
+    color: var(--text-muted);
 }
 
-.form-group {
+/* নেভিগেশন লিংকসমূহ */
+.sidebar-menu {
     display: flex;
     flex-direction: column;
+    gap: 4px;
+    padding: 0 12px;
 }
 
-.form-group label {
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    outline: none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #0b63f6;
-}
-
-.full-width {
-    grid-column: span 2;
-}
-
-/* Buttons */
-.btn-group {
-    grid-column: span 2;
+.menu-item {
     display: flex;
-    gap: 15px;
-    margin-top: 20px;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #475569;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
-.save-btn {
-    background: #0b63f6;
-    color: white;
-    border: none;
-    padding: 14px 25px;
+.menu-item i {
+    font-size: 16px;
+}
+
+.menu-item:hover {
+    background-color: #F1F5F9;
+    color: var(--primary-blue);
+}
+
+.menu-item.active {
+    background-color: #E0F2FE;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* ২. মেইন কন্টেন্ট উইন্ডো */
+.app-main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    min-width: 0;
+    background-color: var(--light-bg);
+}
+
+.page-title-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy-blue);
+    margin-bottom: 4px;
+}
+
+.page-subtitle-text {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ==========================================================
+   FIGMA CORE COMPONENTS (SAME TO SAME)
+   ========================================================== */
+
+/* বামদিকের মেইন প্রোফাইল কার্ড */
+.figma-profile-card {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-hero-banner {
+    height: 80px;
+    background: linear-gradient(135deg, #1E3A8A 0%, #0A2540 100%);
+}
+
+.profile-avatar-container {
+    margin-top: -45px;
+    margin-bottom: 12px;
+    display: inline-block;
+    position: relative;
+}
+
+.main-profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.u-display-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy-blue);
+    margin-bottom: 2px;
+}
+
+.u-meta-major {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.u-meta-email {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* এডিট বাটন */
+.edit-profile-btn {
+    background-color: #ffffff;
+    border: 1px solid #CBD5E1;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.edit-profile-btn:hover {
+    background-color: #F8FAFC;
+    border-color: #94A3B8;
+}
+
+/* স্ট্যাটস কাউন্টার কার্ড গ্রিড */
+.stat-counter-card {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
     border-radius: 12px;
-    cursor: pointer;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
-.delete-btn {
-    background: #e63946;
-    color: white;
-    border: none;
-    padding: 14px 25px;
+.stat-counter-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--navy-blue);
+    margin: 0;
+}
+
+.stat-counter-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ডানদিকের আপলোড করা প্যানেল */
+.figma-uploads-panel {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy-blue);
+    margin: 0;
+}
+
+.btn-new-upload-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+/* আপলোড আইটেম ডিজাইন */
+.upload-list-item {
+    background-color: #F8FAFC;
+    border: 1px solid #F1F5F9;
     border-radius: 12px;
-    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-/* Responsive */
-@media(max-width:900px) {
+.upload-list-item:hover {
+    transform: translateX(3px);
+}
 
-    .dashboard-container {
-        flex-direction: column;
-    }
+.file-icon-box {
+    width: 40px;
+    height: 40px;
+    background-color: #E0F2FE;
+    color: var(--primary-blue);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
 
-    .sidebar {
-        width: 100%;
-    }
+.file-meta-details h6 {
+    margin: 0 0 2px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1E293B;
+}
 
-    .profile-form {
-        grid-template-columns: 1fr;
-    }
+.file-meta-details p {
+    margin: 0;
+    font-size: 11px;
+    color: var(--text-muted);
+}
 
-    .full-width,
-    .btn-group {
-        grid-column: span 1;
-    }
+.view-all-uploads-btn {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+}
 
-    .main-content {
-        padding: 20px;
-    }
+/* প্রফেশনাল ৩য় উইজেট রুলার */
+.growth-stats-card {
+    background: linear-gradient(135deg, #041E42 0%, #0A2540 100%);
+    border-radius: 12px;
+}
+
+.reputation-stats-card {
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    border-radius: 12px;
+}
+
+.stats-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.growth-stats-card h3,
+.reputation-stats-card h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.growth-stats-card p,
+.reputation-stats-card p {
+    font-size: 13px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* ==========================================================
+   MODAL WINDOW & FORM CONTROLS STYLE
+   ========================================================== */
+.custom-modal-box {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-input {
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+.custom-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+.save-changes-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.save-changes-btn:hover {
+    background-color: #0052a3;
+    color: white;
+}
+
+.delete-account-btn {
+    background-color: #FFF1F2;
+    color: #E11D48;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #FFE4E6;
+}
+
+.delete-account-btn:hover {
+    background-color: #FFE4E6;
+    color: #BE123C;
 }

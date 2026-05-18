@@ -1,7 +1,5 @@
 <?php
+require 'vendor/autoload.php';
 
-include 'config/db.php';
-
-echo "Database Connected Successfully";
-
+echo "Composer + PHPMailer working!";
 ?>

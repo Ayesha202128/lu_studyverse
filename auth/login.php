@@ -19,6 +19,13 @@ if(isset($_POST['login'])){
         // password check
         if(password_verify($password, $user['password'])){
 
+
+    // 🔥 EMAIL VERIFICATION CHECK (ADD THIS)
+    if($user['is_verified'] == 0){
+        echo "Please verify your email first!";
+        exit();
+    }
+
             // session start
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['fullname'] = $user['fullname'];
