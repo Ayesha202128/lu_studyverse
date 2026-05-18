@@ -1,6 +1,3 @@
-/* ==========================================================
-   LU STUDYVERSE DESIGN SYSTEM SPECIFICATIONS
-   ========================================================== */
 :root {
     --navy-blue: #0A2540;
     --primary-blue: #0066cc;
@@ -18,34 +15,36 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================================
-   APP APP-LAYOUT ARCHITECTURE
-   ========================================================== */
 .app-layout {
     display: flex;
     min-height: 100vh;
+    padding: 24px;
+    gap: 24px;
+    background-color: var(--light-bg);
+    max-width: 100%;
 }
 
-/* ১. সাইডবার স্টাইলিং (Sidebar Engine) */
 .app-sidebar {
     width: var(--sidebar-width);
     background-color: #ffffff;
-    border-right: 1px solid #E2E8F0;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
+    border: 1px solid #E2E8F0;
+    position: sticky;
+    top: 24px;
+    height: calc(100vh - 48px);
     z-index: 100;
     display: flex;
     flex-direction: column;
     padding: 24px 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    flex-shrink: 0;
 }
 
 .sidebar-brand {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 0 24px mb-4;
+    padding: 0 24px;
     margin-bottom: 30px;
 }
 
@@ -60,7 +59,6 @@ body {
     color: var(--navy-blue);
 }
 
-/* সাইডবার ইউজার প্রফেশনাল উইজেট */
 .sidebar-user-card {
     display: flex;
     align-items: center;
@@ -91,7 +89,6 @@ body {
     color: var(--text-muted);
 }
 
-/* নেভিগেশন লিংকসমূহ */
 .sidebar-menu {
     display: flex;
     flex-direction: column;
@@ -127,12 +124,13 @@ body {
     font-weight: 600;
 }
 
-/* ২. মেইন কন্টেন্ট উইন্ডো */
 .app-main-content {
     flex: 1;
-    margin-left: var(--sidebar-width);
     min-width: 0;
     background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .page-title-text {
@@ -147,11 +145,6 @@ body {
     font-size: 14px;
 }
 
-/* ==========================================================
-   FIGMA CORE COMPONENTS (SAME TO SAME)
-   ========================================================== */
-
-/* বামদিকের মেইন প্রোফাইল কার্ড */
 .figma-profile-card {
     background: #ffffff;
     border: 1px solid #E2E8F0;
@@ -202,7 +195,6 @@ body {
     color: var(--text-muted);
 }
 
-/* এডিট বাটন */
 .edit-profile-btn {
     background-color: #ffffff;
     border: 1px solid #CBD5E1;
@@ -219,7 +211,6 @@ body {
     border-color: #94A3B8;
 }
 
-/* স্ট্যাটস কাউন্টার কার্ড গ্রিড */
 .stat-counter-card {
     background: #ffffff;
     border: 1px solid #E2E8F0;
@@ -241,7 +232,6 @@ body {
     margin: 0;
 }
 
-/* ডানদিকের আপলোড করা প্যানেল */
 .figma-uploads-panel {
     background: #ffffff;
     border: 1px solid #E2E8F0;
@@ -263,7 +253,6 @@ body {
     text-decoration: none;
 }
 
-/* আপলোড আইটেম ডিজাইন */
 .upload-list-item {
     background-color: #F8FAFC;
     border: 1px solid #F1F5F9;
@@ -307,7 +296,6 @@ body {
     text-decoration: none;
 }
 
-/* প্রফেশনাল ৩য় উইজেট রুলার */
 .growth-stats-card {
     background: linear-gradient(135deg, #041E42 0%, #0A2540 100%);
     border-radius: 12px;
@@ -341,9 +329,6 @@ body {
     margin: 0;
 }
 
-/* ==========================================================
-   MODAL WINDOW & FORM CONTROLS STYLE
-   ========================================================== */
 .custom-modal-box {
     border-radius: 16px;
     border: none;
@@ -387,4 +372,10 @@ body {
 .delete-account-btn:hover {
     background-color: #FFE4E6;
     color: #BE123C;
+}
+
+.profile-layout-footer {
+    border-radius: 12px;
+    font-size: 13px;
+    margin-top: 40px;
 }

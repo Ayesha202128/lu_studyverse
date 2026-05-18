@@ -55,44 +55,43 @@ render_layout('header', 'LU StudyVerse - Dashboard');
         
         <div class="category-header">
             <h2 class="category-section-title">Browse by Category</h2>
-            <a href="#" class="category-view-all">View All &gt;</a>
+            <a href="search.php" class="category-view-all">View All &gt;</a>
         </div>
         
         <div class="category-grid">
             
-            <div class="category-card">
+            <a href="search.php?category=Notes" class="category-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="category-icon-box">
                     <i class="bi bi-file-earmark-text"></i>
                 </div>
                 <span class="category-card-title">Notes</span>
-            </div>
+            </a>
             
-            <div class="category-card">
-    <div class="category-icon-box">
-        <i class="bi bi-funnel"></i> 
-    </div>
-    <span class="category-card-title">Lab Reports</span>
-</div>
+            <a href="search.php?category=Lab Reports" class="category-card" style="text-decoration: none; color: inherit; display: block;">
+                <div class="category-icon-box">
+                    <i class="bi bi-funnel"></i> 
+                </div>
+                <span class="category-card-title">Lab Reports</span>
+            </a>
             
-            <div class="category-card">
+            <a href="search.php?category=Assignments" class="category-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="category-icon-box">
                     <i class="bi bi-clipboard"></i>
                 </div>
                 <span class="category-card-title">Assignments</span>
-            </div>
+            </a>
             
-            <div class="category-card">
+            <a href="search.php?category=Questions" class="category-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="category-icon-box">
                     <i class="bi bi-question-circle"></i>
                 </div>
                 <span class="category-card-title">Questions</span>
-            </div>
+            </a>
             
         </div>
         
     </div>
 </section>
-
 
 <section class="trending-section">
     <div class="container">
@@ -204,16 +203,15 @@ render_layout('header', 'LU StudyVerse - Dashboard');
             <p class="cta-subtitle-desc">Share your high-quality study materials and earn recognition within the LU academic community. Helping others has never been easier.</p>
             
             <div class="cta-buttons-row">
-                <a href="#" class="btn-cta-primary">
-                    <i class="bi bi-file-earmark-arrow-up"></i> Start Uploading
+                <a href="upload.php" class="btn-cta-primary">
+                    <i class="bi bi-file-arrow-up"></i> Start Uploading
                 </a>
-                <a href="#" class="btn-cta-secondary">Learn More</a>
+                <a href="#" class="cta-secondary" style="text-decoration: none; color: white; margin-left: 15px;">Learn More</a>
             </div>
             
         </div>
     </div>
 </section>
-
 
 <?php 
 // Render the structural footer layout sheet
