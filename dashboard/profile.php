@@ -122,13 +122,14 @@ $total_materials = $materials_result->num_rows;
             </div>
         </div>
 
+
         <nav class="sidebar-menu">
-            <a href="../index.php" class="menu-item"><i class="bi bi-search"></i> Browse</a>
-            <a href="dashboard.php" class="menu-item"><i class="bi bi-grid"></i> Dashboard</a>
-            <a href="upload.php" class="menu-item"><i class="bi bi-cloud-arrow-up"></i> Upload</a>
-            <a href="profile.php" class="menu-item active"><i class="bi bi-person-fill"></i> Profile</a>
-            <a href="settings.php" class="menu-item"><i class="bi bi-gear"></i> Settings</a>
-        </nav>
+    <a href="../index.php" class="menu-item"><i class="bi bi-search"></i> Browse</a>
+    <a href="./dashboard.php" class="menu-item"><i class="bi bi-grid"></i> Dashboard</a>
+    <a href="./upload.php" class="menu-item"><i class="bi bi-cloud-arrow-up"></i> Upload</a>
+    <a href="./profile.php" class="menu-item active"><i class="bi bi-person-fill"></i> Profile</a>
+    <a href="./settings.php" class="menu-item"><i class="bi bi-gear"></i> Settings</a>
+</nav>
     </aside>
 
     <main class="app-main-content">
@@ -215,9 +216,9 @@ $total_materials = $materials_result->num_rows;
                                                 <p>Uploaded: <?php echo date('M d, Y', strtotime($row['upload_date'])); ?> • <?php echo htmlspecialchars($row['category']); ?></p>
                                             </div>
                                         </div>
-                                        <div class="action-buttons-box">
-                                            <a href="../assets/materials/<?php echo $row['file_name']; ?>" class="btn btn-light btn-sm mx-1" download><i class="bi bi-download"></i></a>
-                                        </div>
+                                       <div class="action-buttons-box">
+    <a href="../uploads/<?php echo $row['file_name']; ?>" class="btn btn-light btn-sm mx-1" download><i class="bi bi-download"></i></a>
+</div>
                                     </div>
                                 <?php endwhile; ?>
                                 <div class="text-center mt-3">
@@ -333,3 +334,4 @@ $total_materials = $materials_result->num_rows;
 </script>
 </body>
 </html>
+

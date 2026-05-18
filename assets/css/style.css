@@ -1,15 +1,19 @@
 :root {
     --navy-dark: #0a1d37;
-    /* Primary Navy */
+    --navy: #0a1d37;
+    /* এই লাইনটি যোগ করো */
     --blue-accent: #2563eb;
-    /* Browse Link Blue */
+    --blue-link: #2563eb;
+    /* এই লাইনটি যোগ করো */
     --text-muted: #64748b;
-    /* Gray Subtitles */
+    --gray-text: #64748b;
+    /* এই লাইনটি যোগ করো */
     --border-light: #e2e8f0;
-    /* Section Borders */
+    --border: #e2e8f0;
+    /* এই লাইনটি যোগ করো */
     --bg-light: #f8fafc;
-    /* Card Background */
 }
+
 
 * {
     margin: 0;
@@ -43,6 +47,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+
+
 }
 
 .nav-left {
@@ -198,6 +205,7 @@ body {
 
 /* --- FOOTER FIX --- */
 .main-footer {
+    padding-left: 200px;
     background-color: #051124;
     color: #ffffff;
     padding: 80px 0 40px;
@@ -330,6 +338,15 @@ body {
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
+}
+
+
+/* --- লেআউট সেন্টারিং ফিক্স --- */
+.container-small {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* Categories */

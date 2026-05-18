@@ -260,7 +260,7 @@ body {
 
 /* Footer er boro titles (Platform, Legal) */
 .footer-title {
-    color: #0A2540;
+    color: #ffffff;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -268,14 +268,14 @@ body {
 
 /* Footer er vitorer link (Terms, Privacy) */
 .footer-link {
-    color: #627D98;
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
 }
 
 /* Footer link e mouse nile jeno dark hoy */
 .footer-link:hover {
-    color: #0A2540;
+    color: #ffffff;
 }
 
 /* --- HERO SECTION BANNER DESIGN --- */
@@ -863,30 +863,32 @@ body {
 }
 
 /* ==========================================
-   RESPONSIVE FIX PATCH (DO NOT MODIFY HTML)
+   RESPONSIVE FIX PATCH (NO DESIGN CHANGE)
    ========================================== */
 
-/* Large devices (laptops smaller screens) */
-@media (max-width: 1200px) {
-    .hero-title {
-        font-size: 36px;
-    }
-
-    .hero-main-img {
-        height: 420px;
-    }
-
-    .trending-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .sub-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* ===== Global safety fix ===== */
+* {
+    box-sizing: border-box;
 }
 
-/* Tablets */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Container fix ===== */
+.container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ===== HERO SECTION ===== */
 @media (max-width: 992px) {
+    .hero-title {
+        font-size: 32px;
+    }
+
     .hero-container .row {
         flex-direction: column;
         text-align: center;
@@ -896,18 +898,40 @@ body {
         margin: 0 auto;
     }
 
+    .hero-image-box {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
     .hero-title {
-        font-size: 32px;
+        font-size: 26px;
+    }
+
+    .hero-desc {
+        font-size: 14px;
     }
 
     .hero-main-img {
-        height: 350px;
+        height: 300px;
     }
+}
 
+/* ===== CATEGORY GRID FIX ===== */
+@media (max-width: 992px) {
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
 
+@media (max-width: 576px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== TRENDING SECTION FIX ===== */
+@media (max-width: 992px) {
     .trending-grid {
         grid-template-columns: 1fr;
     }
@@ -917,94 +941,52 @@ body {
     }
 }
 
-/* Mobile devices */
-@media (max-width: 768px) {
-
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .hero-desc {
-        font-size: 14px;
-    }
-
-    .hero-main-img {
-        height: 280px;
-    }
-
-    .search-wrapper {
-        flex-direction: column;
-        padding: 10px;
-        gap: 10px;
-    }
-
-    .search-btn {
-        width: 100%;
-    }
-
-    .category-grid {
-        grid-template-columns: 1fr;
-    }
-
+@media (max-width: 576px) {
     .sub-cards-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ===== CTA SECTION ===== */
+@media (max-width: 576px) {
+    .cta-blue-banner {
+        padding: 30px 20px;
+    }
+
+    .cta-main-title {
+        font-size: 22px;
+    }
+
+    .cta-subtitle-desc {
+        font-size: 14px;
     }
 
     .cta-buttons-row {
         flex-direction: column;
     }
-
-    .cta-blue-banner {
-        padding: 40px 20px;
-    }
 }
 
-/* Small mobile */
-@media (max-width: 576px) {
-
-    .hero-title {
-        font-size: 24px;
-    }
-
-    .hero-container {
-        padding: 30px 0;
-    }
-
-    .hero-main-img {
-        height: 220px;
-    }
-
-    .feat-footer-row {
+/* ===== HEADER FIX (important) ===== */
+@media (max-width: 992px) {
+    .header-wrapper {
         flex-direction: column;
         gap: 10px;
-        align-items: flex-start;
-    }
-
-    .btn-download-action {
-        width: 100%;
         text-align: center;
     }
 
-    .trending-header {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-
-    .category-header {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
+    .header-menu-area {
+        flex-wrap: wrap;
     }
 }
 
-/* Extra fix for overflow issues */
-img {
-    max-width: 100%;
-    height: auto;
-}
+/* ===== SMALL DEVICE TEXT FIX ===== */
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 22px;
+    }
 
-.container {
-    padding-left: 15px;
-    padding-right: 15px;
+    .category-section-title,
+    .trending-title {
+        font-size: 18px;
+    }
 }

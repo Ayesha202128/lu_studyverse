@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #0046af;
+    --navy-dark: #001c3d;
+    --text-color: #1e293b;
+    --text-light: #64748b;
+    --bg-main: #f8fafc;
+    --border-color: #cbd5e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.upload-container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.upload-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 760px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.upload-card h2 {
+    font-size: 26px;
+    color: var(--navy-dark);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.upload-card .subtitle {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Form layouts */
+.form-group {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--navy-dark);
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+select {
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    color: var(--text-color);
+    transition: all 0.2s;
+    background: #fff;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 70, 175, 0.1);
+}
+
+.input-hint,
+.file-hint {
+    color: var(--text-light);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* Category Pills Styling */
+.category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill-container input[type="radio"] {
+    display: none;
+}
+
+.pill-container .pill {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #fff;
+}
+
+.pill-container input[type="radio"]:checked+.pill {
+    background-color: #f1f5f9;
+    border-color: var(--navy-dark);
+    font-weight: 600;
+    color: var(--navy-dark);
+}
+
+/* Drag & Drop Area */
+.drag-drop-zone {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #fafafa;
+    cursor: pointer;
+    transition: border 0.2s, background 0.2s;
+}
+
+.upload-icon {
+    font-size: 36px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.drag-drop-zone h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--navy-dark);
+}
+
+.drag-drop-zone p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.browse-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #e2e8f0;
+    margin: 30px 0;
+}
+
+/* Actions Section */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-draft {
+    padding: 12px 24px;
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-draft:hover {
+    background: #f8fafc;
+}
+
+.btn-publish {
+    padding: 12px 30px;
+    border: none;
+    background: var(--primary-color);
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-publish:hover {
+    background: #00368a;
+}
+
+/* Custom Message Alert Style */
+.alert-box {
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.success-msg {
+    background-color: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.error-msg {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
