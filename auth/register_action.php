@@ -47,7 +47,7 @@ if(isset($_POST['register'])){
         $_SESSION['fullname'] = $fullname;
 
         // ⭐ REDIRECT TO HOME
-        header("Location: ../index.php");
+        header("Location: ../dashboard/dashboard.php");
         exit();
 
     } else {
