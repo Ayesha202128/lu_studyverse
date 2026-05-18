@@ -251,7 +251,7 @@ body {
 
 /* --- FOOTER DESIGN --- */
 .footer {
-    background-color: #ffffff;
+    background-color: #0A2540;
     border-top: 1px solid #e2e8f0;
     padding: 40px 0;
     margin-top: 50px;
@@ -860,4 +860,151 @@ body {
         flex-direction: column;
         gap: 12px;
     }
+}
+
+/* ==========================================
+   RESPONSIVE FIX PATCH (DO NOT MODIFY HTML)
+   ========================================== */
+
+/* Large devices (laptops smaller screens) */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-main-img {
+        height: 420px;
+    }
+
+    .trending-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sub-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .hero-container .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-wrapper {
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-main-img {
+        height: 350px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trending-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sub-cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-desc {
+        font-size: 14px;
+    }
+
+    .hero-main-img {
+        height: 280px;
+    }
+
+    .search-wrapper {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sub-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons-row {
+        flex-direction: column;
+    }
+
+    .cta-blue-banner {
+        padding: 40px 20px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 576px) {
+
+    .hero-title {
+        font-size: 24px;
+    }
+
+    .hero-container {
+        padding: 30px 0;
+    }
+
+    .hero-main-img {
+        height: 220px;
+    }
+
+    .feat-footer-row {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .btn-download-action {
+        width: 100%;
+        text-align: center;
+    }
+
+    .trending-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .category-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
+/* Extra fix for overflow issues */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
 }

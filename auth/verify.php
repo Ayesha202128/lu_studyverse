@@ -1,5 +1,6 @@
 <?php
-include __DIR__ . '/../config/db.php';
+include '../config/db.php';
+session_start();
 
 if(isset($_GET['code'])){
 
@@ -10,19 +11,29 @@ if(isset($_GET['code'])){
 
     if(mysqli_num_rows($result) > 0){
 
+        $user = mysqli_fetch_assoc($result);
+
+        // UPDATE USER VERIFIED
         $update = "UPDATE users 
-        SET is_verified=1, verification_code=NULL
-        WHERE verification_code='$code'";
+                   SET is_verified=1, verification_code=NULL 
+                   WHERE id=".$user['id'];
 
         mysqli_query($conn, $update);
 
-        echo "Account Verified Successfully! You can now login from you login in page..";
+        $_SESSION['success'] = "Email verified successfully. You can now login.";
+
+        // 🔥 DIRECT LOGIN REDIRECT
+        header("Location: login.php");
+        exit();
 
     } else {
-        echo "Invalid verification link!";
+        $_SESSION['error'] = "Invalid or expired verification link.";
+        header("Location: login.php");
+        exit();
     }
 
 } else {
-    echo "No verification code found!";
+    header("Location: login.php");
+    exit();
 }
 ?>

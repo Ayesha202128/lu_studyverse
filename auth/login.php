@@ -21,11 +21,15 @@ if(isset($_POST['login'])){
 
 
     // 🔥 EMAIL VERIFICATION CHECK (ADD THIS)
-    if($user['is_verified'] == 0){
-        echo "Please verify your email first!";
-        exit();
-    }
-
+    // if($user['is_verified'] == 0){
+    //     echo "Please verify your email first!";
+    //     exit();
+    // }
+if($user['is_verified'] == 0){
+    $_SESSION['error'] = "Please verify your email first.";
+    header("Location: login.php");
+    exit();
+}
             // session start
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['fullname'] = $user['fullname'];
@@ -134,7 +138,9 @@ Sign In
 </form>
 
 <div class="small">
-Forgot password?
+    <a href="password_reset.php" style="color:gray;text-decoration:none;">
+        Forgot password?
+    </a>
 </div>
 
 </div>

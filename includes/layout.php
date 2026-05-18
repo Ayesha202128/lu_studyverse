@@ -1,9 +1,7 @@
 <?php
 function render_layout($section, $page_title = "LU StudyVerse") {
-    
-    // ==========================================================
-    // ১. হেডার পার্ট (HEADER PART)
-    // ==========================================================
+
+
     if ($section === 'header') {
 ?>
 <!DOCTYPE html>
@@ -47,7 +45,7 @@ function render_layout($section, $page_title = "LU StudyVerse") {
                             </div>
                             
                             <div class="user-name-label">
-                                <span>Hi, <?php echo explode(' ', trim($_SESSION['fullname']))[0]; ?></span>
+                                <span><?php echo explode(' ', trim($_SESSION['fullname']))[0]; ?></span>
                                 <i class="bi bi-chevron-down"></i>
                             </div>
                             
